@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "481917837784",
+    "firebase_url": "https://cdim4385-spring20.firebaseio.com",
+    "project_id": "cdim4385-spring20",
+    "storage_bucket": "cdim4385-spring20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481917837784:android:c7f96f54b511c33af652ad",
+        "android_client_info": {
+          "package_name": "com.mobileapp.covid19app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "481917837784-3psgga3pcrob0eocq0g8n8pecs1nn99t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEnjaP5ncm7ALQh-ybVKNqbTs7vyvvAHU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "481917837784-3psgga3pcrob0eocq0g8n8pecs1nn99t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

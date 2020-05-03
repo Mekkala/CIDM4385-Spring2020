@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        applicationId "com.mobileapp.covid19app"
+        minSdkVersion 26
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    // https://stackoverflow.com/a/52561908/13355500
+    // https://developer.android.com/studio/write/java8-support
+    //kotlinOptions {
+    //jvmTarget = '1.8'
+    //}
+
+//    compileOptions {
+//        sourceCompatibility = 1.8
+//        targetCompatibility = 1.8
+//    }
+}
+
+dependencies {
+    def nav_version = "2.3.0-alpha05"
+    // def lifecycle_version = "2.2.0"
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+    //Google
+    implementation 'com.google.android.material:material:1.1.0'
+    // implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.android.libraries.places:places:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    // RecylcerView
+    //implementation "androidx.recyclerview:recyclerview:1.1.0"
+    //implementation "androidx.recyclerview:recyclerview-selection:1.1.0-rc01"
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    // Dynamic Feature Module Support
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+    //Firebase
+    implementation 'com.google.firebase:firebase-database:19.2.1'
+    // add the Firebase SDK for Google Analytics
+    implementation 'com.google.firebase:firebase-analytics:17.3.0'
+    // add SDKs for any other desired Firebase products
+    implementation 'com.google.firebase:firebase-database-ktx:19.2.1'
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    // androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+}

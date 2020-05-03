@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="176dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="119dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/symptoms"
+        android:textColor="#1E88E5"
+        android:textSize="36sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="144dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/common_symptoms"
+        android:textColor="#3949AB"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView5"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/some_people_may_experience"
+        android:textColor="#3949AB"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="155dp"
+        android:layout_height="130dp"
+        android:layout_above="@+id/textView8"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="4dp"
+        android:layout_toEndOf="@+id/imageView5"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/aches_and_pains_nnasal_congestion_nrunny_nose_nsore_throat_ndiarrhoea"
+        android:textColor="#039BE5"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="390dp"
+        android:layout_height="75dp"
+        android:layout_above="@+id/sHomeButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="21dp"
+        android:text="@string/on_average_it_takes_5_6_days_from_when_someone_is_infected_with_the_virus_for_symptoms_to_show_however_it_can_take_up_to_14_days"
+        android:textColor="#039BE5" />
+
+    <Button
+        android:id="@+id/sHomeButton"
+        android:layout_width="138dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="132dp"
+        android:layout_marginBottom="47dp"
+        android:background="#1E88E5"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/back_to_home"
+        android:textColor="#F8F5F5"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="194dp"
+        android:layout_height="123dp"
+        android:layout_above="@+id/textView8"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/backpain"
+        app:srcCompat="@drawable/backache" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="284dp"
+        android:layout_height="221dp"
+        android:layout_above="@+id/textView6"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="-20dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/fever_ntiredness_ndry_cought"
+        android:textColor="#039BE5"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="295dp"
+        android:layout_height="245dp"
+        android:layout_above="@+id/textView6"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="-37dp"
+        android:layout_marginBottom="-8dp"
+        android:contentDescription="@string/mensick"
+        app:srcCompat="@drawable/man" />
+
+
+</RelativeLayout>
