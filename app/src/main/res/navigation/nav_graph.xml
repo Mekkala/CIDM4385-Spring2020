@@ -24,15 +24,27 @@
         android:id="@+id/prevention"
         android:name="com.mobileapp.covid19app.prevention"
         android:label="fragment_prevention"
-        tools:layout="@layout/fragment_prevention" />
+        tools:layout="@layout/fragment_prevention" >
+        <action
+            android:id="@+id/preventionToMain"
+            app:destination="@id/mainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/symptoms"
         android:name="com.mobileapp.covid19app.symptoms"
         android:label="fragment_symptoms"
-        tools:layout="@layout/fragment_symptoms" />
+        tools:layout="@layout/fragment_symptoms" >
+        <action
+            android:id="@+id/symptomsToMain"
+            app:destination="@id/mainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/report"
         android:name="com.mobileapp.covid19app.report"
         android:label="fragment_report"
-        tools:layout="@layout/fragment_report" />
+        tools:layout="@layout/fragment_report" >
+        <action
+            android:id="@+id/reportToMain"
+            app:destination="@id/mainFragment" />
+    </fragment>
 </navigation>

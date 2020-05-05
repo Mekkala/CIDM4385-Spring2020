@@ -33,14 +33,15 @@ class MainFragment : Fragment() {
         return view
     }
 
+    //navigatation to report
     private fun onButtonReportButtonClick(view: View) {
         view.findNavController().navigate(R.id.mainToReport)
     }
-
+    //To sysmptoms
     private fun onButtonSymptopmButtonClick(view: View) {
         view.findNavController().navigate(R.id.mainToSymptoms)
     }
-
+    // To prevention
     private fun onButtonPreventionButtonClick(view: View) {
         view.findNavController().navigate(R.id.mainToPrevention)
     }

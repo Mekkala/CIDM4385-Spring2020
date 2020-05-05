@@ -10,7 +10,7 @@
     <string name="some_people_may_experience">Some people may experience:</string>
     <string name="aches_and_pains_nnasal_congestion_nrunny_nose_nsore_throat_ndiarrhoea">Aches and pains \nNasal congestion \nRunny nose \nSore throat \nDiarrhoea</string>
     <string name="on_average_it_takes_5_6_days_from_when_someone_is_infected_with_the_virus_for_symptoms_to_show_however_it_can_take_up_to_14_days">On average it takes 5–6 days from when someone is infected with the virus for symptoms to show, however it can take up to 14 days.</string>
-    <string name="back_to_home">Back To Home</string>
+
     <string name="logo">LOGO</string>
     <string name="stay_home_nsave_lives">STAY HOME.\nSAVE LIVES.</string>
     <string name="_1_stay_home_as_much_as_you_can_n2_keep_a_safe_distance_n3_wash_hands_often_n4_cover_your_cough_n5_sick_call_ahead">1. STAY home as much as you can \n2. KEEP a safe distance \n3. WASH hands often \n4. COVER your cough \n5. SICK? Call ahead</string>
@@ -23,4 +23,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fever_ntiredness_ndry_cought">Fever \nTiredness \nDry cought</string>
     <string name="mensick">mensick</string>
+    <string name="report">Report</string>
+    <string name="back_to_home">Back To Home</string>
+    <string name="back_to_main1">Back To Main</string>
+    <string name="cases">Cases</string>
+    <string name="location">Location</string>
+    <string name="aches_and_pain_nrunny_nose_nsore_throat_ndiarrhea1">Aches and Pain \nRunny nose \nSore throat \nDiarrhea</string>
 </resources>

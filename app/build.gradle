@@ -17,28 +17,31 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
         release {
             minifyEnabled false
+            resValue "string", "google_maps_key",
+                    (project.findProperty("GOOGLE_MAPS_API_KEY") ?: "")
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     // https://stackoverflow.com/a/52561908/13355500
     // https://developer.android.com/studio/write/java8-support
-    //kotlinOptions {
-    //jvmTarget = '1.8'
-    //}
+    kotlinOptions {
+    jvmTarget = '1.8'
+    }
 
-//    compileOptions {
-//        sourceCompatibility = 1.8
-//        targetCompatibility = 1.8
-//    }
+   compileOptions {
+       sourceCompatibility = 1.8
+      targetCompatibility = 1.8
+   }
 }
 
 dependencies {
-    def nav_version = "2.3.0-alpha05"
+    def nav_version = '2.3.0-alpha06'
     // def lifecycle_version = "2.2.0"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -47,7 +50,7 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.2.0'
     //Google
     implementation 'com.google.android.material:material:1.1.0'
-    // implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
     implementation 'com.google.android.libraries.places:places:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
@@ -68,10 +71,13 @@ dependencies {
     // add SDKs for any other desired Firebase products
     implementation 'com.google.firebase:firebase-database-ktx:19.2.1'
 
+    //Volley
+    implementation 'com.android.volley:volley:1.1.1'
+
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    // androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
+    androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
 }

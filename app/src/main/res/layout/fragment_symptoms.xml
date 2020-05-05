@@ -52,36 +52,21 @@
         android:textSize="25sp" />
 
     <TextView
-        android:id="@+id/textView7"
-        android:layout_width="155dp"
-        android:layout_height="130dp"
-        android:layout_above="@+id/textView8"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="4dp"
-        android:layout_toEndOf="@+id/imageView5"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:text="@string/aches_and_pains_nnasal_congestion_nrunny_nose_nsore_throat_ndiarrhoea"
-        android:textColor="#039BE5"
-        android:textSize="20sp" />
-
-    <TextView
         android:id="@+id/textView8"
         android:layout_width="390dp"
         android:layout_height="75dp"
-        android:layout_above="@+id/sHomeButton"
+        android:layout_above="@+id/homeSymptoms"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginBottom="21dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="18dp"
         android:text="@string/on_average_it_takes_5_6_days_from_when_someone_is_infected_with_the_virus_for_symptoms_to_show_however_it_can_take_up_to_14_days"
         android:textColor="#039BE5" />
 
     <Button
-        android:id="@+id/sHomeButton"
+        android:id="@+id/homeSymptoms"
         android:layout_width="138dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -136,6 +121,21 @@
         android:layout_marginBottom="-8dp"
         android:contentDescription="@string/mensick"
         app:srcCompat="@drawable/man" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="174dp"
+        android:layout_height="123dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="200dp"
+        android:layout_toEndOf="@+id/imageView5"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/aches_and_pain_nrunny_nose_nsore_throat_ndiarrhea1"
+        android:textColor="#039BE5"
+        android:textSize="18sp" />
 
 
 </RelativeLayout>

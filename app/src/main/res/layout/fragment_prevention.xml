@@ -52,14 +52,14 @@
         android:textSize="24sp" />
 
     <Button
-        android:id="@+id/homeButton3"
+        android:id="@+id/homePrevention"
         android:layout_width="158dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginEnd="127dp"
-        android:layout_marginBottom="23dp"
+        android:layout_marginBottom="26dp"
         android:background="#1E88E5"
         android:fontFamily="sans-serif-condensed-medium"
         android:text="@string/back_to_home"
