@@ -29,4 +29,5 @@
     <string name="cases">Cases</string>
     <string name="location">Location</string>
     <string name="aches_and_pain_nrunny_nose_nsore_throat_ndiarrhea1">Aches and Pain \nRunny nose \nSore throat \nDiarrhea</string>
+    <string name="total_confirmed">Total Confirmed</string>
 </resources>

@@ -9,7 +9,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -25,6 +24,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.libraries.places.api.Places
 import kotlinx.android.synthetic.main.fragment_report.*
 import org.json.JSONObject
+import com.mobileapp.covid19app.BuildConfig.COVID_API_KEY
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -57,15 +57,15 @@ class report : Fragment(), OnMapReadyCallback {
     private lateinit var googleMap : GoogleMap
     private lateinit var uiSettings: UiSettings
 
-    private var mLocationPermissionGranted : Boolean = true
-    private var lat : Double = 32.77
-    private var lon : Double = -96.78
+    private var mLocationPermissionGranted : Boolean = false
+    private var lat : Double = 0.0
+    private var lon : Double = 0.0
     private val PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION : Int = 1
     private val MAP_VIEW_BUNDLE_KEY : String = "MapViewBundleKey"
 
 
 
-    public override fun onCreateView(
+     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
@@ -89,7 +89,7 @@ class report : Fragment(), OnMapReadyCallback {
         //mapView.getMapAsync(this)
 
         fusedLocationClient.lastLocation
-            .addOnSuccessListener { location : Location? ->
+            .addOnSuccessListener { location: Location? ->
 
                 Log.i("DUDE", "LOCATION SERVICE")
 
@@ -102,51 +102,103 @@ class report : Fragment(), OnMapReadyCallback {
                 }
 
                 //move map
-                if(googleMap != null){
+                if (googleMap != null) {
                     val loc = LatLng(lat, lon)
-                    val cameraUpdate : CameraUpdate = CameraUpdateFactory.newLatLng(loc)
+                    val cameraUpdate: CameraUpdate = CameraUpdateFactory.newLatLng(loc)
                     googleMap.addMarker(MarkerOptions().position(loc).title("Your Location"))
                     googleMap.animateCamera(cameraUpdate)
                     googleMap.moveCamera(cameraUpdate)
-                    Log.i("DUDE", "LAT: ${googleMap.cameraPosition.target.latitude.toString()} " +
-                            "LON: ${googleMap.cameraPosition.target.longitude.toString()}")
+                    Log.i(
+                        "DUDE", "LAT: ${googleMap.cameraPosition.target.latitude.toString()} " +
+                                "LON: ${googleMap.cameraPosition.target.longitude.toString()}"
+                    )
                 } else {
                     Log.i("DUDE", "Google Map not Ready to use")
                 }
-                
+
 
                 val list = geocoder.getFromLocation(lat, lon, 1)
 
-                val city = list[0].locality
-                val state = list[0].adminArea
-
-                val place = "$city, $state"
-
                 // Instantiate the RequestQueue.
                 val queue = Volley.newRequestQueue(activity?.applicationContext)
-                val url = "https://api.covid19api.com/live/country/united-states/status/confirmed/date/2020-03-21T13:13:30Z"
+                val apiKey = BuildConfig.COVID_API_KEY
+
+                val url = "https://covid1910.p.rapidapi.com/data/confirmed/country/canada/province/british_columbia/date/04-02-2020"
 
                 /* Request a string response from the provided URL. */
                 val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
                     Response.Listener<JSONObject> { response ->
 
-                        val cases = response.getJSONObject("currently").get("Confirmed").toString()
-                        textViewCases.text = "Cases: $cases"
-                        textViewLocation.text = "Location: $place"
+                        val country = response.getJSONObject("0").get("country").toString()
+                        val cases = response.getJSONObject("0").get("confirmed").toString()
+                        county.text = "Country: $country"
+                        confirmed.text = "Confirmed Case: $cases"
 
-            },
+                    },
 
-            Response.ErrorListener { error ->
-            // TODO: Handle error
-            Log.e("DUDE", "ERRORED OUT" + error.message!!)
-        }
-        )
+                    Response.ErrorListener { error ->
+                        // TODO: Handle error
+                        Log.e("DUDE", "ERRORED OUT" + error.message!!)
+                    }
+                )/* {
+                    override fun getHeaders(): Map<String, String> {
+                        val params: MutableMap<String, String> = HashMap()
+                        params["x-rapidapi-host"] = "covid1910.p.rapidapi.com"
+                        params["x-rapidapi-key"] = "6134e05827msha75206b5a6aee49p17843ejsn0c02f0e6a9fe"
+                }
 
-        // Add the request to the RequestQueue.
-        queue.add(jsonObjectRequest)
-    }
+            }
+
+                 */
+
+                // Add the request to the RequestQueue.
+                queue.add(jsonObjectRequest)
+            }
         homeReport?.setOnClickListener { v: View -> onButtonHomeReportClick(v) }
         return view
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        var mapViewBundle : Bundle? = outState.getBundle(MAP_VIEW_BUNDLE_KEY)
+        if(mapViewBundle == null)
+        {
+            mapViewBundle = Bundle()
+            outState.putBundle(MAP_VIEW_BUNDLE_KEY, mapViewBundle)
+        }
+
+        //saves map state
+        mapView.onSaveInstanceState(mapViewBundle)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        mapView.onStart()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mapView.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        mapView.onPause()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        mapView.onStop()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mapView.onDestroy()
+    }
+
+    override fun onLowMemory() {
+        super.onLowMemory()
+        mapView.onLowMemory()
     }
 
     override fun onMapReady(map: GoogleMap?) {
@@ -164,6 +216,8 @@ class report : Fragment(), OnMapReadyCallback {
         uiSettings.isZoomGesturesEnabled = true
 
     }
+
+
     //location Permission
     private fun getLocationPermission() {
         var same : Boolean = android.Manifest.permission.ACCESS_FINE_LOCATION == PackageManager.PERMISSION_GRANTED.toString()
