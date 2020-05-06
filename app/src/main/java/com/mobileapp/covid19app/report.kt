@@ -57,15 +57,16 @@ class report : Fragment(), OnMapReadyCallback {
     private lateinit var googleMap : GoogleMap
     private lateinit var uiSettings: UiSettings
 
-    private var mLocationPermissionGranted : Boolean = false
+
     private var lat : Double = 0.0
     private var lon : Double = 0.0
     private val PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION : Int = 1
+    private var mLocationPermissionGranted : Boolean = false
     private val MAP_VIEW_BUNDLE_KEY : String = "MapViewBundleKey"
 
 
 
-     override fun onCreateView(
+     public override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
@@ -105,7 +106,7 @@ class report : Fragment(), OnMapReadyCallback {
                 if (googleMap != null) {
                     val loc = LatLng(lat, lon)
                     val cameraUpdate: CameraUpdate = CameraUpdateFactory.newLatLng(loc)
-                    googleMap.addMarker(MarkerOptions().position(loc).title("Your Location"))
+                    googleMap.addMarker(MarkerOptions().position(loc).title("Cases"))
                     googleMap.animateCamera(cameraUpdate)
                     googleMap.moveCamera(cameraUpdate)
                     Log.i(
@@ -121,7 +122,7 @@ class report : Fragment(), OnMapReadyCallback {
 
                 // Instantiate the RequestQueue.
                 val queue = Volley.newRequestQueue(activity?.applicationContext)
-                val apiKey = BuildConfig.COVID_API_KEY
+               // val apiKey = BuildConfig.COVID_API_KEY
 
                 val url = "https://covid1910.p.rapidapi.com/data/confirmed/country/canada/province/british_columbia/date/04-02-2020"
 

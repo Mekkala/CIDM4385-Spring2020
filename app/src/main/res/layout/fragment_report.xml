@@ -23,11 +23,11 @@
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapReport"
-        android:layout_width="366dp"
-        android:layout_height="190dp"
-        android:layout_marginTop="300dp"
+        android:layout_width="355dp"
+        android:layout_height="286dp"
+        android:layout_marginTop="212dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.644"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -65,7 +65,7 @@
         android:id="@+id/confirmed"
         android:layout_width="330dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="116dp"
+        android:layout_marginBottom="52dp"
         android:fontFamily="sans-serif-condensed-medium"
         android:textColor="#1E88E5"
         android:textSize="24sp"
